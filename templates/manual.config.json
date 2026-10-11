@@ -1,0 +1,18 @@
+{
+  "title": "系統使用說明書",
+  "subtitle": "",
+  "org": "",
+  "author": "",
+  "versionDate": "2026-01-01",
+  "url": "",
+  "accentColor": "028090",
+  "chaptersDir": "chapters",
+  "figuresDir": "figures",
+  "outDir": ".",
+  "bodyFontEastAsia": "微軟正黑體",
+  "bodyFontLatin": "Arial",
+  "terms": {},
+  "figurePlan": "",
+  "photoCredits": "",
+  "annotations": ""
+}

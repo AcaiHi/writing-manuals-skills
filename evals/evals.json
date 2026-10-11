@@ -1,0 +1,44 @@
+[
+  {
+    "skills": ["writing-manuals"],
+    "query": "系統的截圖都拍好了，幫我寫成 Word 使用說明書，結案要交的",
+    "files": [],
+    "gap_without_skill": "沒有 skill 時 Claude 會直接用標題樣式、表格與項目符號寫一份格式很「Word」的文件，圖號與圖說各章不一致，頁面留一大片空白，目錄頁碼是 Word 自動產生而跟實際不符。",
+    "expected_behavior": [
+      "先讀 USER_STORY.md、manifest.json 與截圖，確認書名、單位、作者後建立 manual.config.json",
+      "規劃章節與圖表計畫，一張圖一個圖號，圖說為「圖 N.M. 名稱」放在圖正下方",
+      "章節寫成 chapters/NN-*.md 連續段落，不用 Word 標題樣式、不用項目符號，能用文章表示就不用表格",
+      "執行 build_manual.py 產生 docx 與 pdf，再執行 check_manual.py 與 measure_blank.py，依空白比例補內容直到每頁幾乎填滿"
+    ]
+  },
+  {
+    "skills": ["writing-manuals"],
+    "query": "手冊的目錄、字型跟段落看起來怪怪的，內文也沒有左右對齊，幫我調整成純文字的樣子",
+    "files": [],
+    "gap_without_skill": "沒有 skill 時 Claude 會去套用 Word 的標題樣式與自動目錄，反而讓文件更不像純文字，或只改局部段落而沒有改樣式預設。",
+    "expected_behavior": [
+      "不使用標題樣式、大綱階層、框線、底色，所有段落是 Normal 樣式",
+      "段距為 0、單行行距、取消貼齊格線與標點溢出、內文左右對齊、首行縮排 2 字元、問答凸排",
+      "目錄用固定文字加定位點與頁碼，頁碼由 Word 實測後回填，不用自動目錄",
+      "透過修改 build_manual.py 的設定或章節來源後重新建置，不直接手改 docx"
+    ]
+  },
+  {
+    "skills": ["writing-manuals"],
+    "query": "手冊有幾頁下半部都空空的，看起來很不專業",
+    "files": [],
+    "gap_without_skill": "沒有 skill 時 Claude 會把圖放大或加分頁符號來填滿頁面，造成圖片尺寸不一致。",
+    "expected_behavior": [
+      "執行 measure_blank.py 找出空白超過門檻的頁面與建議補的字數",
+      "補的是說明文字，不是放大圖片，也不是插入分頁或空白行",
+      "補完重新建置，再量一次，直到除封面、目錄與最後一頁外每頁空白不超過約 10%"
+    ]
+  },
+  {
+    "skills": [],
+    "query": "幫我把這份 docx 轉成 pdf",
+    "files": [],
+    "gap_without_skill": "n/a",
+    "expected_behavior": ["writing-manuals 不被使用；用一般的 docx 或 pdf 轉換方式處理"]
+  }
+]

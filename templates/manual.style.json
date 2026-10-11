@@ -1,0 +1,30 @@
+{
+  "_說明": "排版偏好。只改你要的鍵，沒寫的用內建預設；字級單位 pt，色碼 6 位十六進位。改完重新執行 build_manual.py 即可。",
+  "bodySize": 11,
+  "h1Size": 18,
+  "h2Size": 14,
+  "h3Size": 12,
+  "captionSize": 10,
+  "tableSize": 10,
+  "citeSize": 4,
+  "citeColor": "A6A6A6",
+  "firstLineIndentChars": 2,
+  "align": "both",
+  "lineSpacing": 1.0,
+  "paragraphSpacingPt": 0,
+  "pictureOutlineColor": "A6A6A6",
+  "pictureOutlinePt": 1,
+  "marginCm": 2.2,
+  "maxImageHeightCm": 21.5,
+  "tableCellMarginTwips": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "tableAutofit": false,
+  "_表格": "tableCellMarginTwips 依序為 上、左、下、右（twips，20 = 1 pt）；tableAutofit 為 false 時欄寬固定，不隨文字內容變動。",
+  "ruleChars": 73,
+  "boxRuleChars": 46,
+  "_分隔線": "ruleChars 是章標題下方「─」線的字數，boxRuleChars 是「── 本章重點 ──」框標題尾端的字數；預設值是依 9 pt、預設字型量到剛好等於文字寬度，換字型或邊界後若線太短或超出，就調整這兩個數字（可輸出 PDF 後量測）。"
+}
